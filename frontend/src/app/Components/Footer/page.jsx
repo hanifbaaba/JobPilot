@@ -27,8 +27,12 @@ export default function Footer() {
           <Link href="/Components/CustomerSupport">Support</Link>
         </h1>
         <ul>
-          <li>Faqs</li>
-          <li>Privacy Policy</li>
+          <li>
+            <Link href="/Components/Faqs">Faqs</Link>
+          </li>
+          <li>
+            <Link href="/Components/PrivacyPolicy">Privacy Policy</Link>
+          </li>
           <li>Terms and conditions</li>
         </ul>
       </div>
