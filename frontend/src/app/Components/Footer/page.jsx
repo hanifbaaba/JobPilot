@@ -33,7 +33,9 @@ export default function Footer() {
           <li>
             <Link href="/Components/PrivacyPolicy">Privacy Policy</Link>
           </li>
-          <li>Terms and conditions</li>
+          <li>
+            <Link href="/Components/Terms">Terms and conditions</Link>
+          </li>
         </ul>
       </div>
       <h5>2025 JobPilot-Job portal. All Rights Reserved</h5>
