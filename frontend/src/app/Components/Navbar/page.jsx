@@ -1,14 +1,23 @@
+import Link from "next/link";
 export default function Navbar() {
   return (
     <div>
       <ul>
-        <li>Home</li>
-        <li>Find Job</li>
-        <li>Employers</li>
-        <li>Candidates</li>
-        <li>Pricing plans</li>
-        <li>Customer Support</li>
-        <li>+1-202-555-0178</li>
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+        <li>
+          <Link href="/Pages/JobPage"> Find Job</Link>
+        </li>
+        <li>
+          <Link href="/Components/Pricing"> Pricing plans</Link>
+        </li>
+        <li>
+          <Link href="/Components/CustomerSupport">Customer Support</Link>
+        </li>
+        <li>
+          <Link href="/ContactPage">Contact</Link>
+        </li>
       </ul>
     </div>
   );
