@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Footer() {
   return (
     <div>
@@ -5,20 +6,26 @@ export default function Footer() {
         <h1>JobPilot</h1>
         <ul>
           <li>
-            Call Now <b>(319) 555-105</b>
+            Call Now: <b>+1-202-555-0178</b>
           </li>
-          <li>address goes here</li>
+          <li>Silicon Valley</li>
         </ul>
       </div>
       <div>
         <h1>Quick Link</h1>
         <ul>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link href="/Components/About">About</Link>
+          </li>
+          <li>
+            <Link href="/Components/ContactPage">Contact</Link>
+          </li>
         </ul>
       </div>
       <div>
-        <h1>Support</h1>
+        <h1>
+          <Link href="/Components/CustomerSupport">Support</Link>
+        </h1>
         <ul>
           <li>Faqs</li>
           <li>Privacy Policy</li>
