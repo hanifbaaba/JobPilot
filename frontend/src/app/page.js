@@ -1,3 +1,4 @@
+import Footer from "./Components/Footer/page";
 import Guide from "./Components/Guide/page";
 import Header from "./Components/Header/page";
 import Hero from "./Components/Hero/page";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Vacancies />
       <Guide />
       <Testimonial />
+      <Footer />
     </>
   );
 }
