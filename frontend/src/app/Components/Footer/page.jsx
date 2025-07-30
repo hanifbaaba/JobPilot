@@ -70,6 +70,14 @@ export default function Footer() {
                 Terms and Conditions
               </Link>
             </li>
+            <li>
+              <Link
+                href="/Components/Pricing"
+                className="hover:text-white transition"
+              >
+                Pricing
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
