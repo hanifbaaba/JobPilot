@@ -1,7 +1,6 @@
-// create a card grid for each testimonial
 export default function Testimonial() {
   const testimonialCard = [
-    { name: "Ben james", description: "description" },
+    { name: "Ben james", description: "descriptionsss" },
     { name: "Bob ziroll", description: "description" },
     { name: "Per Borgen", description: "description" },
     { name: "Tech Tim", description: "description" },

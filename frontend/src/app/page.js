@@ -2,6 +2,7 @@ import Guide from "./Components/Guide/page";
 import Header from "./Components/Header/page";
 import Hero from "./Components/Hero/page";
 import Navbar from "./Components/Navbar/page";
+import Testimonial from "./Components/Testimonial/page";
 import Vacancies from "./Components/Vacancies/page";
 
 export default function HomePage() {
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Hero />
       <Vacancies />
       <Guide />
+      <Testimonial />
     </>
   );
 }
