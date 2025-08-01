@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Testimonial() {
   const testimonialCard = [
     { name: "Ben james", description: "descriptionsss" },
@@ -25,6 +26,11 @@ export default function Testimonial() {
           </div>
         ))}
       </div>
+      {/* <Link href="/">
+        <button className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+          ← Back to Home
+        </button>
+      </Link> */}
     </section>
   );
 }

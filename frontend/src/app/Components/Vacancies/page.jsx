@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Vacancies() {
   return (
     <section className="bg-white py-16 px-6">
@@ -50,6 +51,11 @@ export default function Vacancies() {
           </li>
         </ul>
       </div>
+      {/* <Link href="/">
+        <button className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+          ← Back to Home
+        </button>
+      </Link> */}
     </section>
   );
 }

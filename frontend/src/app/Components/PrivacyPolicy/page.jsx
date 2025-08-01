@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function PrivacyPolicy() {
   return (
     <div className="max-w-4xl mx-auto p-6 text-gray-800">
@@ -83,6 +84,11 @@ export default function PrivacyPolicy() {
         If you have any questions regarding this policy, reach out to us at:{" "}
         <b>support@jobpilot.com</b>
       </p>
+      <Link href="/">
+        <button className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+          ← Back to Home
+        </button>
+      </Link>
     </div>
   );
 }

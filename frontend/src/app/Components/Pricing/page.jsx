@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Pricing() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-16 text-center">
@@ -8,7 +9,6 @@ export default function Pricing() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Basic Plan */}
         <div className="border rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
           <h2 className="text-2xl font-semibold mb-2">Basic</h2>
           <p className="text-gray-600 mb-4">1 Job Posting</p>
@@ -23,7 +23,6 @@ export default function Pricing() {
           </button>
         </div>
 
-        {/* Standard Plan */}
         <div className="border rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
           <h2 className="text-2xl font-semibold mb-2">Standard</h2>
           <p className="text-gray-600 mb-4">3 Job Postings</p>
@@ -38,7 +37,6 @@ export default function Pricing() {
           </button>
         </div>
 
-        {/* Premium Plan */}
         <div className="border rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
           <h2 className="text-2xl font-semibold mb-2">Premium</h2>
           <p className="text-gray-600 mb-4">Unlimited Postings</p>
@@ -53,6 +51,11 @@ export default function Pricing() {
           </button>
         </div>
       </div>
+      <Link href="/">
+        <button className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+          ← Back to Home
+        </button>
+      </Link>
     </div>
   );
 }
