@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Header() {
   return (
     <header className="bg-white shadow-md py-4 px-6">
@@ -12,9 +13,11 @@ export default function Header() {
           <button className="px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition">
             Sign in
           </button>
-          <button className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
-            Post a Job
-          </button>
+          <Link href="/Pages/AddJobPage">
+            <button className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+              Post a Job
+            </button>
+          </Link>
         </div>
       </div>
     </header>
