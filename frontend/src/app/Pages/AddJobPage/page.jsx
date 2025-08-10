@@ -1,17 +1,31 @@
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 
 export default function AddJobPage() {
+  const [jobTitle, setJobTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [salary, setSalary] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [location, setLocation] = useState("");
+  const [category, setCategory] = useState("");
+
+  const jobSubmit = (event) => {
+    event.preventDeafault();
+  };
   return (
     <div className="max-w-3xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Add a Job</h1>
 
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={jobSubmit}>
         <div>
           <label className="block font-medium mb-1">Job Title</label>
           <input
             type="text"
             placeholder="Title of job..."
             className="w-full border border-gray-300 rounded px-4 py-2"
+            onChange={(e) => setJobTitle(e.target.value)}
+            value={jobTitle}
           />
         </div>
 
@@ -21,6 +35,8 @@ export default function AddJobPage() {
             type="text"
             placeholder="Description"
             className="w-full border border-gray-300 rounded px-4 py-2"
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
           />
         </div>
 
@@ -30,6 +46,8 @@ export default function AddJobPage() {
             type="text"
             placeholder="Salary"
             className="w-full border border-gray-300 rounded px-4 py-2"
+            onChange={(e) => setSalary(e.target.value)}
+            value={salary}
           />
         </div>
 
@@ -39,6 +57,8 @@ export default function AddJobPage() {
             type="text"
             placeholder="Name of Company"
             className="w-full border border-gray-300 rounded px-4 py-2"
+            onChange={(e) => setCompanyName(e.target.value)}
+            value={companyName}
           />
         </div>
 
@@ -48,30 +68,24 @@ export default function AddJobPage() {
             type="text"
             placeholder="Location"
             className="w-full border border-gray-300 rounded px-4 py-2"
+            onChange={(e) => setLocation(e.target.value)}
+            value={location}
           />
         </div>
 
         <div>
           <label className="block font-medium mb-1">Category</label>
-          <select className="w-full border border-gray-300 rounded px-4 py-2">
+          <select
+            className="w-full border border-gray-300 rounded px-4 py-2"
+            onChange={(e) => setCategory(e.target.value)}
+            value={category}
+          >
             <option>Fullstack Developer</option>
             <option>Frontend Developer</option>
             <option>Backend Developer</option>
             <option>Javascript Developer</option>
             <option>UI/UX Designer</option>
             <option>Engineering Manager</option>
-          </select>
-        </div>
-
-        <div>
-          <label className="block font-medium mb-1">Salary Range</label>
-          <select className="w-full border border-gray-300 rounded px-4 py-2">
-            <option>Prefer not to share</option>
-            <option>$10,000 - $25,000 USD</option>
-            <option>$25,000 - $50,000 USD</option>
-            <option>$50,000 - $80,000 USD</option>
-            <option>$80,000 - $100,000 USD</option>
-            <option>$100,000 or more USD</option>
           </select>
         </div>
 
