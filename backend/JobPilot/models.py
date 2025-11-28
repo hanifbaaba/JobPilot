@@ -10,3 +10,9 @@ class CreateJob(models.Model):
       created_at = models.DateTimeField(auto_now_add=True)
       updated_at = models.DateTimeField(auto_now=True)
       
+class ApplyJob(models.Model):
+      name = models.CharField(max_length=200)
+      reason_for_applying = models.TextField()
+      country_of_residence = models.CharField(max_length=200)
+      resume_upload = models.ImageField(upload_to='CV/', blank=True, null=True)
+      portfolio_link = models.URLField(max_length=355)
