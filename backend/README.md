@@ -113,10 +113,16 @@
 - Searching for jobs based on filter
   this endpoint search for jobs based on keywords in the url
   Example
+
   - /create-job/?search=developer
   - /create-job/?search=data
   - /create-job/?search=manager
   - /create-job/?search=engineer
+
+- Salary range based filtering
+  - /create-job/?min_salary=200000 User will be able to search the minimum salary posted
+  - /create-job/?max_salary=600000 User will be able to search the maximum salary posted
+  - /create-job/?min_salary=200000&max_salary=600000 User will be able to search for both minimum amount and maximum amount
 
 ## Tech Stack
 
