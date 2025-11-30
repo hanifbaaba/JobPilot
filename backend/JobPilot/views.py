@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework.pagination import PageNumberPagination
 
 class CreateJobView(viewsets.ModelViewSet):
     queryset = CreateJob.objects.all()
@@ -21,9 +22,6 @@ class ApplyJobView(viewsets.ModelViewSet):
     queryset = ApplyJob.objects.all()
     serializer_class = ApplyJobSerializer
     permission_classes = [AllowAny]
+    pagination_class = PageNumberPagination
    
    
-   
-#    /create-job/?min_salary=50000&max_salary=120000
-# min_salary = 50000
-# max_salary = 150000
