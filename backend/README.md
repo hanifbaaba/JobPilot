@@ -4,11 +4,14 @@
 
 ## Table of Content
 
-1. Features
-2. Installation
-3. Usage
-4. Stack
-5. Endpoints
+- Features
+- Installation
+- Usage
+- Stack
+- Endpoints
+- Contributions
+- License
+- Author
 
 ## Features
 
@@ -23,4 +26,109 @@
 
 1. Clone the repository
 
-- git clone
+- git clone https://github.com/hanifbaaba/JobPilot
+- Enter the directory:
+- cd backend
+- Install required dependencies:
+- pip install -r requirements.txt
+- Run the project:
+- python manage.py runserver
+
+## Usage
+
+- Create an account.
+- Login to the account.
+- Job seeker: {
+
+  - Go to the jobs application page.
+  - Search for suitable jobs that match your requirement.
+  - Apply for job.
+  - Wait for recruiter to contact you.
+    }
+
+- Employer :{ - Go to the jobs creation page. - Create a new job.
+  }
+
+## API Endpoints
+
+- Creating a new job.
+  GET/create-job this displays list of available jobs.
+  [
+  {
+  "id": 1,
+  "job_title": "Frontend developer",
+  "description": "We are looking for a highly talented frontend developer experienced in React and typescript. Must be familiar with git and aws deployment.",
+  "salary": "96000.00",
+  "company_name": "daea",
+  "location": "Remote",
+  "category": "Frontend development"
+  },
+  {
+  "id": 2,
+  "job_title": "Backend developer",
+  "description": "We are looking for a highly talented Backend developer experienced in Django and PostgreSQL. Must be familiar with git and aws deployment.",
+  "salary": "95000.00",
+  "company_name": "daea",
+  "location": "Remote",
+  "category": "Backend development"
+  },
+  {
+  "id": 3,
+  "job_title": "Data Scientist",
+  "description": "We are hiring a data scientist to join our team . Qualifications must be able to use numpy, matplotlib and 10 years of experience.",
+  "salary": "960000.00",
+  "company_name": "daea",
+  "location": "Remote",
+  "category": "Data Science"
+  }
+  ]
+  GET /create-job/<id>/ gets a single job
+  {
+  "id": 2,
+  "job_title": "Backend developer",
+  "description": "We are looking for a highly talented Backend developer experienced in Django and PostgreSQL. Must be familiar with git and aws deployment.",
+  "salary": "95000.00",
+  "company_name": "daea",
+  "location": "Remote",
+  "category": "Backend development"
+  },
+  POST/create-job this creates a new job application.
+  PUT/create-job<id>/ this updates a job application.
+  DELETE/create-job<id>/ this deletes a job application.
+
+- Applying for a job
+  GET /apply-job/ Returns all job applications.
+  POST /apply-job/ Submit a new application.
+  {
+  "job": 2,
+  "name": "John Doe",
+  "reason_for_applying": "I have strong experience…",
+  "country_of_residence": "Kenya",
+  "portfolio_link": "https://john-doe.dev"
+  }
+  PUT /apply-job/<id> Updates job application
+  DELETE /apply-job/<id> Deletes job application
+
+## Tech Stack
+
+- Language : Python
+- Framework : Django, Django Rest Framework
+- Database : PostgreSQL/MongoDB
+- Deployment : Render/Railway
+
+## Contributing
+
+- Fork the repo
+- Create a new branch ("git checkout -b feature-branch)
+- Commit new changes ("git commit -m "Added a new feature")
+- Push to your branch ("git push origin feature-branch")
+- Open a pull request
+
+## License
+
+- This project is under the MIT license.
+
+## Author
+
+- Hanif Baaba
+- Github : (https://github.com/hanifbaaba)
