@@ -9,6 +9,7 @@
 - Usage
 - Stack
 - Endpoints
+- System Design
 - Contributions
 - License
 - Author
@@ -97,17 +98,25 @@
   DELETE/create-job<id>/ this deletes a job application.
 
 - Applying for a job
-  GET /apply-job/ Returns all job applications.
-  POST /apply-job/ Submit a new application.
+  GET /apply-job/<id> Returns all job applications.
+  POST /apply-job/<id> Submit a new application.
   {
   "job": 2,
   "name": "John Doe",
   "reason_for_applying": "I have strong experience…",
-  "country_of_residence": "Kenya",
-  "portfolio_link": "https://john-doe.dev"
+  "country_of_residence": "USA",
+  "portfolio_link": "https://portfolio.dev"
   }
   PUT /apply-job/<id> Updates job application
   DELETE /apply-job/<id> Deletes job application
+
+- Searching for jobs based on filter
+  this endpoint search for jobs based on keywords in the url
+  Example
+  - /create-job/?search=developer
+  - /create-job/?search=data
+  - /create-job/?search=manager
+  - /create-job/?search=engineer
 
 ## Tech Stack
 

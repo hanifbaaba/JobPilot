@@ -7,7 +7,3 @@ router.register(r'create-job', CreateJobView, basename="create-job")
 router.register(r'apply-job', ApplyJobView, basename='apply-job')
 urlpatterns = router.urls
 
-# urlpatterns= [
-#     path("apply-job", ApplyJobView.as_view(), name="apply-job")
-    
-# ]
