@@ -2,11 +2,12 @@ from django.shortcuts import render
 from .models import CreateJob, ApplyJob
 from .serializers import CreateJobSerializer,ApplyJobSerializer
 from rest_framework import viewsets
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.pagination import PageNumberPagination
 from django.core.mail import send_mail
+
 
 class CreateJobView(viewsets.ModelViewSet):
     queryset = CreateJob.objects.all()
@@ -34,7 +35,3 @@ class ApplyJobView(viewsets.ModelViewSet):
         recipient_list=[application.email],
         fail_silently=False,
         )
-
-    
-
-

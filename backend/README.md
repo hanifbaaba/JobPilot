@@ -1,15 +1,16 @@
 ## JobPilot
 
-- JobPilot is a job application platform that allows candidates to apply for jobs, companies to Post jobs available.
+- JobPilot is a job application platform that allows candidates to apply for jobs, companies to Post job opportunities. It provides a clean API backend built with Django & DRF, optimized for performance, scalability, and production deployment.
 
 ## Table of Content
 
 - Features
 - Installation
-- Usage
-- Stack
-- Endpoints
 - System Design
+- Usage
+- Endpoints
+- Email notifications
+- Tech Stack
 - Contributions
 - License
 - Author
@@ -17,11 +18,12 @@
 ## Features
 
 - Job application for job seekers.
-- Job posting for employers.
+- Job creation for employers.
 - Search with filters based on categories(title, keyword,location,salary etc)
-- User Authentication
 - Pagination
 - Email Notification
+- Resume upload
+- Secure and scalable architecture
 
 ## Installation
 
@@ -35,20 +37,116 @@
 - Run the project:
 - python manage.py runserver
 
+## System Design
+
+JobPilot System Design
+
+Architecture
+
+- Monolith Backend Application
+- Client → Server → PostgreSQL DB
+- File Storage via Amazon S3
+- HTTPS for secure communication
+
+Features
+
+- Job creation
+- Job application
+- Resume upload
+- Email Notifications
+- Pagination
+- Searching and filtering
+- Deployment
+
+Data Model Definitions
+CreateJob
+
+- job_title
+- description
+- salary
+- company_name
+- location
+- category
+- experience
+- created_at
+- updated_at
+
+ApplyJob
+
+- job(FK)
+- name
+- email
+- reason_for_applying
+- country_of_residence
+- resume_upload
+- portfolio_link
+- preferred_salary
+
+Engineering Requirements
+
+- Extensibility : Future feature (frontend integration, live interviews etc)
+- Testing : Testing live endpoints with Swagger
+- API Stability : Clear routing and consistent response structure
+
+Non-Functional Requirements
+
+- Performance : Redis caching for frequently searched queries
+- Reliability : 99% uptime with target with monolith architecture and Backup DB
+- Security : HTTPS encryption , CSRF protection
+- Resilience : Additional nodes, Backup DB
+- Scalability : Vertical scaling and load balancing(Round robin and geo-based) after 10,000 users
+- Logging and metrics : Python logging
+- CDN : Static assets
+- File storage : Amazon S3 for resumes
+
+Low-Level Design
+
+- Job seekers → search, filter, view, and apply
+- Employers → create and manage job listings
+
+Memory Optimization:
+
+- Pagination
+- Lazy loading
+- Caching: Redis for search & repeated queries\
+
+API Design
+
+- Proper HTTP methods (GET, POST, PUT, DELETE)
+- Each endpoint has a single clear responsibility
+
+Error Handling:
+
+- 400 → Bad Request
+- 401 → Unauthorized
+- 404 → Not Found
+- 500 → Server Error
+
+Pagination: 10 jobs per page
+
+- Defensive routing to avoid improper requests
+
+Database & Storage
+
+- Primary DB: PostgreSQL
+- File Storage: Amazon S3
+- Backup DB: MongoDB node for resilience
+
 ## Usage
 
-- Create an account.
-- Login to the account.
-- Job seeker: {
+Job Seeker
 
-  - Go to the jobs application page.
-  - Search for suitable jobs that match your requirement.
-  - Apply for job.
-  - Wait for recruiter to contact you.
-    }
+- Create an account
+- Log in
+- Search for jobs
+- Apply to a job
+- Receive recruiter feedback
 
-- Employer :{ - Go to the jobs creation page. - Create a new job.
-  }
+Employer
+
+- Post new job listings
+- Manage posted jobs
+- Contact candidates via email
 
 ## API Endpoints
 

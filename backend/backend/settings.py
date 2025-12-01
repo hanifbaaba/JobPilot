@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'JobPilot',
-    'django_filters'
+    'django_filters',
+    'oauth2_provider',
    
 ]
 
@@ -53,9 +54,9 @@ REST_FRAMEWORK = {
         'rest_framework.filters.OrderingFilter',
         ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 15
-    
+    'PAGE_SIZE': 15,
 }
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -145,4 +146,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'baabahanif@gmail.com'
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
-
+LOGIN_URL = '/admin/login/'
