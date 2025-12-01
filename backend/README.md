@@ -120,9 +120,30 @@
   - /create-job/?search=engineer
 
 - Salary range based filtering
+
   - /create-job/?min_salary=200000 User will be able to search the minimum salary posted
   - /create-job/?max_salary=600000 User will be able to search the maximum salary posted
   - /create-job/?min_salary=200000&max_salary=600000 User will be able to search for both minimum amount and maximum amount
+
+- Pagination
+  Example
+  GET /apply-job/?page = 4. This will route to page 4 of jobs application page.
+
+Response:
+
+HTTP 200 OK
+{
+"count": 80,
+"next": "/apply-job/?page=5",
+"previous": "/apply-job/?page=3",
+"results": [
+Job applications results
+]
+}
+
+## Email Notification
+
+When a user applies for a job, they will get instant email feedback from the recruiter. It utilizes django's send_mail() concept.
 
 ## Tech Stack
 

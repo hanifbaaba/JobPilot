@@ -1,6 +1,8 @@
 from django.db import models
+# from django.contrib.auth.models import AbstractUser
 
 class CreateJob(models.Model):
+      # user = models.ForeignKey(AbstractUser, on_delete=models.CASCADE, related_name='user')
       job_title = models.CharField(max_length=100)
       description = models.TextField()
       salary = models.DecimalField(max_digits=10, decimal_places=2)
@@ -15,8 +17,10 @@ class CreateJob(models.Model):
             return self.job_title
       
 class ApplyJob(models.Model):
+      # user = models.ForeignKey(AbstractUser, on_delete=models.CASCADE, related_name='user')
       job = models.ForeignKey(CreateJob,on_delete=models.CASCADE,related_name='job', blank = True, null=True)
       name = models.CharField(max_length=200)
+      email = models.EmailField()
       reason_for_applying = models.TextField()
       country_of_residence = models.CharField(max_length=200)
       resume_upload = models.ImageField(upload_to='CV/', blank=True, null=True)
